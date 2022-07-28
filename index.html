@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+        <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    
+<h1>Matrix Additon</h1>
+<div class="main">
+<form onsubmit="add(); return false;">
+    <div class="one">
+<h2>Matrix1:</h2>
+ <input type="number" required id="in1">
+<input type="number"required id="in2">
+<input type="number"required id="in3"></br>
+<input type="number"required id="in4">
+<input type="number"required id="in5">
+<input type="number"required id="in6"></br>
+<input type="number"required id="in7">
+<input type="number"required id="in8">
+<input type="number"required id="in9"></div></br></br>
+
+<div class="two">
+<h2>Matrix2:</h2>
+<input type="number" required id="mat1">
+<input type="number"required id="mat2">
+<input type="number"required id="mat3"></br>
+<input type="number"required id="mat4">
+<input type="number"required id="mat5">
+<input type="number"required id="mat6">  </br>
+<input type="number"required id="mat7">
+<input type="number"required id="mat8">
+<input type="number"required id="mat9"> </br>
+</div></br>
+<button type="submit">Enter</button>
+<table id="result">
+<tr><td> </td>       <td> </td>      <td> </td></tr>     </br>
+<tr><td> </td>       <td> </td>      <td> </td></tr>     </br>
+<tr><td> </td>       <td> </td>      <td></td></tr>  </table>
+</div>
+
+</form>
+
+
+
+<script>
+    function add(){
+    let in1= +document.querySelector("#in1").value;
+    let in2= +document.querySelector("#in2").value;
+    let in3= +document.querySelector("#in3").value;
+    let in4= +document.querySelector("#in4").value;
+    let in5= +document.querySelector("#in5").value;
+    let in6= +document.querySelector("#in6").value;
+    let in7= +document.querySelector("#in7").value;
+    let in8= +document.querySelector("#in8").value;
+    let in9= +document.querySelector("#in9").value;
+
+    let mat1= +document.querySelector("#mat1").value;
+    let mat2= +document.querySelector("#mat2").value;
+    let mat3= +document.querySelector("#mat3").value;
+    let mat4= +document.querySelector("#mat4").value;
+    let mat5= +document.querySelector("#mat5").value;
+    let mat6= +document.querySelector("#mat6").value;
+    let mat7= +document.querySelector("#mat7").value;
+    let mat8= +document.querySelector("#mat8").value;
+    let mat9= +document.querySelector("#mat9").value;
+
+    let matrixij1=[[in1,in2,in3],[in4,in5,in6],[in7,in8,in9]];
+
+    let matrixij2=[[mat1,mat2,mat3],[mat4,mat5,mat6],[mat7,mat8,mat9]];
+    
+   let result=[[      ],
+               [       ],
+               [      ]];
+
+
+for(let i = 0; i < matrixij1.length; i++)
+{
+ for (let j = 0; j < matrixij1[i].length; j++){
+    
+    result[i][j] = matrixij1[i][j] + matrixij2[i][j];
+}
+
+}
+// console.log("result",result)
+
+// for(let k = 0; k < result.length; k++){
+//     {
+      
+//     
+    document.querySelector("#result").innerHTML+=`${result}`
+// }
+   }
+</script>
+
+</body>
+</html>
