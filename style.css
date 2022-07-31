@@ -1,15 +1,18 @@
 
+.main{display: flex; gap: -20px; border: 1px solid; flex-direction: column; width: 40%; text-align: center;
+     height: 700px; margin-left: 300px; border-color: brown; border-bottom-left-radius: 30px; 
+     border-top-right-radius: 30px;}
 input{width: 50px; color:darkgreen; border-color: coral; font-weight: bolder;}
-.main{display: flex; flex-direction: row; justify-content: space-evenly; border: 1px solid; width: 40%;
-     /* height: 500px;background-image: url(./images/image.jpg); */
-     padding-bottom: 5px; margin-left: 400px; border-color: blueviolet; border-bottom-left-radius: 30px;
-    border-top-right-radius: 30px;}
-     .one{ flex-wrap: wrap; color: brown; border-color:crimson;}
-     .two{ color: brown; border-color: chocolate; flex-wrap: wrap;}
-     button{width: 50px; background-color: coral;}
+ .one{ color: brown; border-color:crimson; height: 50%; margin-top: -20px;}
+ .two{ color: brown; border-color: chocolate;height: 50%; margin-top: -250px;}
+
+     /* button{width: 50px; background-color: coral;} */
 h1{margin-left: 500px; color: darkgreen; text-decoration: underline;}
 h2{text-decoration: underline; color:hotpink}
-.result{border: 1px solid; width: 400px; height: 300px; color: crimson; font-weight: bolder;}
+#result{width: 200px; height: 100px; color: crimson; font-weight: bolder; margin-left: 170px;} 
+.but{margin-top: -200px;}
+#tab1{width: 60px; font-size: 20px; font-weight: bolder;background-color: coral;}
+#tab2{width: 100px; font-size: 20px; font-weight: bolder; background-color: coral;}
 
 
 

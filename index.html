@@ -4,99 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  
-        <link href="./style.css" rel="stylesheet">
+    <title>Matrix Processing</title>
+    <link href="./style.css" rel="stylesheet">
 </head>
 <body>
+    <h1>Matrix Processing</h1>
     
-<h1>Matrix Additon</h1>
-<div class="main">
-<form onsubmit="add(); return false;">
-    <div class="one">
-<h2>Matrix1:</h2>
- <input type="number" required id="in1">
-<input type="number"required id="in2">
-<input type="number"required id="in3"></br>
-<input type="number"required id="in4">
-<input type="number"required id="in5">
-<input type="number"required id="in6"></br>
-<input type="number"required id="in7">
-<input type="number"required id="in8">
-<input type="number"required id="in9"></div></br></br>
-
-<div class="two">
-<h2>Matrix2:</h2>
-<input type="number" required id="mat1">
-<input type="number"required id="mat2">
-<input type="number"required id="mat3"></br>
-<input type="number"required id="mat4">
-<input type="number"required id="mat5">
-<input type="number"required id="mat6">  </br>
-<input type="number"required id="mat7">
-<input type="number"required id="mat8">
-<input type="number"required id="mat9"> </br>
-</div></br>
-<button type="submit">Enter</button>
-<table id="result">
-<tr><td> </td>       <td> </td>      <td> </td></tr>     </br>
-<tr><td> </td>       <td> </td>      <td> </td></tr>     </br>
-<tr><td> </td>       <td> </td>      <td></td></tr>  </table>
-</div>
-
-</form>
-
-
-
-<script>
-    function add(){
-    let in1= +document.querySelector("#in1").value;
-    let in2= +document.querySelector("#in2").value;
-    let in3= +document.querySelector("#in3").value;
-    let in4= +document.querySelector("#in4").value;
-    let in5= +document.querySelector("#in5").value;
-    let in6= +document.querySelector("#in6").value;
-    let in7= +document.querySelector("#in7").value;
-    let in8= +document.querySelector("#in8").value;
-    let in9= +document.querySelector("#in9").value;
-
-    let mat1= +document.querySelector("#mat1").value;
-    let mat2= +document.querySelector("#mat2").value;
-    let mat3= +document.querySelector("#mat3").value;
-    let mat4= +document.querySelector("#mat4").value;
-    let mat5= +document.querySelector("#mat5").value;
-    let mat6= +document.querySelector("#mat6").value;
-    let mat7= +document.querySelector("#mat7").value;
-    let mat8= +document.querySelector("#mat8").value;
-    let mat9= +document.querySelector("#mat9").value;
-
-    let matrixij1=[[in1,in2,in3],[in4,in5,in6],[in7,in8,in9]];
-
-    let matrixij2=[[mat1,mat2,mat3],[mat4,mat5,mat6],[mat7,mat8,mat9]];
+    <form onsubmit="process(event); return false">
+        <div class="main">
+        <div class="one">
+            <h2>Matrix1:</h2>
+            <input type="number" name="m1" id="m11">
+            <input type="number" name="m1" id="m12">
+            <input type="number" name="m1" id="m13"></br>
+            <input type="number" name="m1" id="m14">
+            <input type="number" name="m1" id="m15">
+            <input type="number" name="m1" id="m16"></br>
+            <input type="number" name="m1" id="m17">
+            <input type="number" name="m1" id="m18">
+            <input type="number" name="m1" id="m19">
+        </div></br></br>
+        
+        <div class="two">
+            <h2>Matrix2:</h2>
+            <input type="number" name="m2" id="m21">
+            <input type="number" name="m2" id="m22">
+            <input type="number" name="m2" id="m23"></br>
+            <input type="number" name="m2" id="m24">
+            <input type="number" name="m2" id="m25">
+            <input type="number" name="m2" id="m26"> </br>
+            <input type="number" name="m2" id="m27">
+            <input type="number" name="m2" id="m28">
+            <input type="number" name="m2" id="m29"> </br>
+        </div></br>
+           
+        <div class="but">
+            <button type="submit" id="tab1">Add</button>
+            <button type="submit" id="tab2">Subtract</button></div>
+        
+        </br></br> <div id="result">
+                <h2>Resultant Matrix</h2>
+                <input type="number" disabled name="mr" id="r00"> </input>
+                <input type="number" disabled name="mr" id="r01"> </input>
+                <input  type="number" disabled name="mr" id="r02"> </input>
+            </br>
+            
+                <input  type="number" disabled name="mr" id="r10"> </input>
+                <input  type="number" disabled name="mr" id="r11"> </input>
+                <input  type="number" disabled name="mr" id="r12"> </input>
+            </br>
+            
+                <input  type="number" disabled name="mr" id="r20"> </input>
+                <input  type="number" disabled name="mr" id="r21"> </input>
+                <input  type="number" disabled name="mr" id="r22"> </input>
+            
+        </div></div>
     
-   let result=[[      ],
-               [       ],
-               [      ]];
-
-
-for(let i = 0; i < matrixij1.length; i++)
-{
- for (let j = 0; j < matrixij1[i].length; j++){
     
-    result[i][j] = matrixij1[i][j] + matrixij2[i][j];
+    </form>
+    <script>
+  function process(e){
+    // console.log(e.submitter.innerText)
+for(let i = 0; i < 3; i++){
+    for(let j = 0; j < 3; j++){
+    if (e.submitter.innerText.toLowerCase() === "Add"){
+
+
+     document.querySelector(`#r${i}${j}`).value += Number(document.querySelector(`#m1${i}${j}`).value) + Number(document.querySelector(`#m2${i}${j}`).value)
+   
+    }
+else{
+    document.querySelector(`#r${i}${j}`).value += Number(document.querySelector(`#m1${i}${j}`).value) - Number(document.querySelector(`#m2${i}${j}`).value)
+} }
 }
 
-}
-// console.log("result",result)
+    }
 
-// for(let k = 0; k < result.length; k++){
-//     {
-      
-//     
-    document.querySelector("#result").innerHTML+=`${result}`
-// }
-   }
-</script>
-
+ </script>
+    
 </body>
 </html>
