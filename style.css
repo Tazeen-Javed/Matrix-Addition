@@ -21,6 +21,7 @@ h2{text-decoration: underline; color:hotpink}
 @media screen and (max-width: 769px){
     .main{margin-left: -2px; margin-left: 100px;}
     h1{margin-left: 2px; margin-left: 100px;}
+    #result{margin-left: -10px; margin-left: 50px;}
 }
 
 @media screen and (max-width: 376px){
